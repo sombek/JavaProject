@@ -5,6 +5,10 @@ public class LinkedListImpl<T> implements LinkedList<T> {
 	private Node<T> tail;
 	private int size;
 
+	public LinkedListImpl() {
+		this.size = 0;
+	}
+
 	@Override
 	public void add(T acc) {
 		// adds in tail
@@ -56,7 +60,7 @@ public class LinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public void removeById(T id) {
 		Node<T> currentNode = findById(id);
-		try{
+		try {
 			Node<T> before = currentNode.prev;
 			Node<T> after = currentNode.next;
 			if (before != null)
@@ -70,7 +74,7 @@ public class LinkedListImpl<T> implements LinkedList<T> {
 			size--;
 			currentNode = null;
 			System.out.println("Removed\n");
-		}catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("Invalid Id\n");
 		}
 	}
